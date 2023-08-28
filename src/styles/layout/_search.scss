@@ -1,0 +1,46 @@
+@use "../globals/variables" as v;
+
+.search {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+
+    &__searchbar {
+        margin-top: 1.25rem;
+        width: 90vw;
+        max-width: 585px;
+        display: flex;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1.25rem;
+        border-radius: 15px 0 0 15px;
+        border: none;
+    }
+
+    &__input:focus {
+        outline: none;
+    }
+
+    &__btn {
+        width: 60px;
+        padding: 1.375rem;
+        border-radius: 0 15px 15px 0;
+        border: none;
+        background-color: hsl(0, 0%, 0%);
+    }
+
+    &__btn:hover {
+        cursor: pointer;
+        background-color: v.$vdark-grey-color;
+    }
+    
+}

@@ -1,0 +1,16 @@
+@use "./variables" as v;
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: v.$font;
+    font-size: 100%;
+    width: 100%;
+}
+
