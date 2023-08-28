@@ -17,8 +17,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution](#)
-- [Live Site](#)
+- [Solution](https://www.frontendmentor.io/solutions/ip-address-tracker-using-reactjs-9iPd5NyWDu)
+- [Live Site](https://ip-address-tracker-nuriatr.netlify.app/)
 
 ### Built with
 
