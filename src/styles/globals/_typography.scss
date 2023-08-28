@@ -19,6 +19,7 @@ h2 {
 p {
     font-size: clamp(1.25rem, .875rem + 1vw, 1.75rem);
     font-weight: 500;
+    color: v.$vdark-grey-color;
 }
 
 input[type="text"]{
