@@ -6,15 +6,30 @@ import arrow from '../images/icon-arrow.svg';
 
 function Search() {
     const [input, setInput] = useState('');
-    const { data, loading, error, fetchData } = useIPify();
+    const { loading, error, fetchData } = useIPify();
 
     useEffect(() => {
         getclientIP();
     }, []);
 
-    const getclientIP = async () => {
-        const res = await axios.get('https://api.ipify.org?format=json');
-        fetchData(res.data.ip, 'ip');
+    const getclientIP = async (retryCount = 0) => {
+        const timeoutDuration = 5000;
+
+        try {
+            const res = await Promise.race([
+                axios.get('https://api.ipify.org?format=json'),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Request timed out')), timeoutDuration))
+            ]);
+
+            fetchData(res.data.ip, 'ip');
+        } catch (error) {
+            if (retryCount < 3) {
+                console.log(`Retrying request... Retry count: ${retryCount + 1}`);
+                getclientIP(retryCount + 1);
+            } else {
+                console.error('Max retry count reached. Error:', error);
+            }
+        }
     };
 
     const handleSearch = () => {
@@ -61,7 +76,7 @@ function Search() {
                     </button>
                 </div>
 
-                {data !== null && !loading && error === null ? <Info/> : ''}
+                <Info loading={loading} error={error} />
             </div>
         </>
     );

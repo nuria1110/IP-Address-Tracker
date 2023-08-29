@@ -1,9 +1,7 @@
 @use '../util' as u;
   
 .leaflet-top {
-    @include u.breakpoint(m) {
-        display: none;
-    }
+    display: none;
 }
 
 .map {
