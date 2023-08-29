@@ -12,8 +12,8 @@
         background-size: cover;
         background-position: center; 
 
-        @include u.breakpoint(s) {
-            height: 19.375rem;
+        @include u.breakpoint(xs) {
+            height: 16rem;
             background-image: url('../../images/pattern-bg-mobile.png');
         }
 

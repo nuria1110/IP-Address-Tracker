@@ -1,3 +1,4 @@
+@use '../util' as u;
 @use "../globals/variables" as v;
 
 .search {
@@ -12,10 +13,14 @@
     flex-direction: column;
     z-index: 10;
 
+    @include u.breakpoint(m) {
+        margin-top: 1.5rem;
+    }
+
     &__searchbar {
         margin-top: 1.25rem;
         width: 90vw;
-        max-width: 585px;
+        max-width: 36.5625rem;
         display: flex;
     }
 
@@ -24,6 +29,14 @@
         padding: 1.25rem;
         border-radius: 15px 0 0 15px;
         border: none;
+
+        @include u.breakpoint(m) {
+            padding: 1rem;
+        }
+
+        @include u.breakpoint(s) {
+            padding: 0.875rem;
+        }
     }
 
     &__input:focus {
@@ -31,8 +44,7 @@
     }
 
     &__btn {
-        width: 60px;
-        padding: 1.375rem;
+        min-width: 3.75rem;
         border-radius: 0 15px 15px 0;
         border: none;
         background-color: hsl(0, 0%, 0%);

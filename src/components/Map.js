@@ -21,7 +21,7 @@ function Map() {
 
             let lat = parseFloat(ipData.location.lat);
             let lng = parseFloat(ipData.location.lng);
-            map = L.map(mapContainer.current).setView([lat, lng], 15);
+            map = L.map(mapContainer.current).setView([lat, lng], 12);
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 20,

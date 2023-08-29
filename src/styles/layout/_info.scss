@@ -17,6 +17,7 @@
     @include u.fade(fadeIn, 0.5s, 1, 1, forwards);
 
     @include u.breakpoint(m) {
+        margin-top: 2.125rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto
     }
@@ -46,7 +47,7 @@
     &__item:first-child,
     &__item:nth-child(2) {
         @include u.breakpoint(m) {
-            padding-bottom: 1.25rem;
+            padding-bottom: 1.125rem;
         }
     }
 
@@ -57,7 +58,7 @@
         }
 
         @include u.breakpoint(s) {
-            padding-bottom: 1.25rem;
+            padding-bottom: 1.125rem;
         }
     }
 }

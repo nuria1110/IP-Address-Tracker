@@ -1,7 +1,8 @@
+@use '../util' as u;
 @use "./variables" as v;
 
 h1 {
-    font-size: clamp(1.625rem, 1rem + 2vw, 2rem);
+    font-size: clamp(1.625rem, 1rem + 2vw, 1.75rem);
     font-weight: 500;
     color: hsl(0, 0%, 100%);
     text-align: center;
@@ -17,11 +18,19 @@ h2 {
 }
 
 p {
-    font-size: clamp(1.25rem, .875rem + 1vw, 1.75rem);
+    font-size: clamp(1rem, 12px + 1.2vw, 1.75rem);
     font-weight: 500;
     color: v.$vdark-grey-color;
 }
 
 input[type="text"]{
     font-size: 1.125rem;
+
+    @include u.breakpoint(m) {
+        font-size: 1rem;
+    }
+
+    @include u.breakpoint(s) {
+        font-size: .875rem;
+    }
 }
